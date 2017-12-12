@@ -9,7 +9,7 @@
 
 * **Tip:** Create a superuser role for your linux user:
 
-        sudo -u postgres createuser $USER -s
+        sudo -u postgres createuser -s $USER
 
 ### Windows
 * Download and install postgres 10.1 **64 bit** from here: <https://www.postgresql.org/download/> . During installation, remember the password supplied to user `postgres`.
@@ -20,7 +20,7 @@
 
 * **Tip:** Create a superuser role for your windows user:
 
-        createuser --username=postgres %USERNAME% -s
+        createuser --username=postgres -s %USERNAME%
 
 ## GeoDjango Stuff: PostGIS, GDAL, GEOS
 ### Ubuntu Linux 16.04
