@@ -38,7 +38,7 @@
 * Install Postgis 2.4.2 **64 bit** from [here](https://winnie.postgis.net/download/windows/pg10/buildbot/postgis-bundle-pg10x64-setup-2.4.2-1.exe)
 #### GDAL + GEOS
 * Run `python` to check if your **python** is 32 or 64 bit.
-* Install corresponding [OSGeo4W](https://trac.osgeo.org/osgeo4w/) (32 or 64 bit) into `c:\osgeo4w` or `c:\osgeo4w64`:
+* Install corresponding [OSGeo4W](https://trac.osgeo.org/osgeo4w/) (32 or 64 bit) into `C:\OSGeo4W` or `C:\OSGeo4W64`:
     * **Note:** Select Express Web-GIS Install and click next.
     * In the ‘Select Packages’ list, ensure that GDAL is selected; MapServer and Apache are also enabled by default, may be unchecked safely.
 * Make sure the following is included in your `settings.py`:
