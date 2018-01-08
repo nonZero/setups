@@ -29,3 +29,5 @@ This guide assumes the following:
 - [Create a production local_settings file ](./prod-settings.md)
 - [Create a database and tables](./migrate.md)
 - [Setup `uwsgi` and `nginx`](./uwsgi.md)
+- [Automating upgrades](./upgrade.md)
+

@@ -6,6 +6,8 @@ Instead of using `runserver` we will be using `uwsgi` which runs our django app 
 
 `uwsgi` is already installed on your server.  It requires a configuration file to detect and run your django app.   Add this to your fabfile:
 
+    from io import StringIO
+
     UWSGI_CONF = """
     [uwsgi]
     plugin = python3
@@ -17,7 +19,7 @@ Instead of using `runserver` we will be using `uwsgi` which runs our django app 
     stats = 127.0.0.1:{env.stats_port}
     """
 
-    env.app_name = "hagadot"
+    env.app_name = "myproject"
     env.wsgi_file = "myproject/wsgi.py"
     env.stats_port = 9000
 
@@ -83,4 +85,12 @@ Add this
 and run:
 
     fab create_nginx_conf
+
+
+## Troubleshooting
+Add a task to show latest nginx log entries:
+
+    @task
+    def nginx_log():
+        sudo("tail /var/log/nginx/error.log")
 
