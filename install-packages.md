@@ -65,6 +65,7 @@ and run:
 
     fab apt_upgrade
 
+Since we have installed nginx, a default web page should appear when accesing your server in your web browser:  <http://myproject.mydomain.com> .
 
 
 ## Setup postgres
