@@ -24,7 +24,7 @@ Let's install many great packages:
         'ntp',  # To keep time synchromized
         'fail2ban',  # to secure against SSH/other attacks
 
-        'postfix',  # mail server
+        'mailutils',  # postfix mail server and goodies
         'opendkim',  # SSL for mail
         'opendkim-tools',
 
@@ -62,6 +62,10 @@ Let's install many great packages:
 
     @task
     def apt_install():
+        host = env.hosts[0]
+        sudo(f'''debconf-set-selections <<< "postfix postfix/mailname string {host}"''')
+        sudo(f'''debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"''')
+
         pkgs = " ".join(APT_PACKAGES)
         sudo(f"DEBIAN_FRONTEND=noninteractive apt-get install -y -q {pkgs}", pty=False)
 
