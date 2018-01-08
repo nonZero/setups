@@ -25,3 +25,4 @@ This guide assumes the following:
 - [Basic Server Setup: Install services and more](./install-packages.md)
 ### Setting up a django project
 - [Clone project and create a virtualenv](./clone.md)
+- [Create a production local_settings file ](./prod-settings.md)
