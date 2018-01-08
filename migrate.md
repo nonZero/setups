@@ -12,12 +12,24 @@ run:
 
     fab create_db
 
-and then:
+and migrate...
+
+    @task
+    def migrate():
+        m('migrate --noinput')
+
+...run:
 
     fab m:migrate
 
 ## Create a Django Superuser (Optional)
 
-If you would like, you can create a superuser for your project:
+If you would like, you can create a superuser for your project. Add:
 
-    fab m:createsuperuser
+    @task
+    def create_superuser():
+        m('createsuperuser', True)
+
+and run:
+
+    fab m:create_superuser

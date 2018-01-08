@@ -28,4 +28,4 @@ This guide assumes the following:
 - [Clone project and create a virtualenv](./clone.md)
 - [Create a production local_settings file ](./prod-settings.md)
 - [Create a database and tables](./migrate.md)
-- [Create a uwsgi Configuration File](./uwsgi.md)
+- [Setup `uwsgi` and `nginx`](./uwsgi.md)

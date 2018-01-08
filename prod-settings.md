@@ -37,9 +37,9 @@ Use <kbd>Ctrl</kbd>+<kbd>D</kbd> to logout from ssh.
 To check if your project is set up correctly use `check`:
 
     @task
-    def m(cmd):
+    def m(cmd, pty=False):
         with virtualenv():
-            run(f"./manage.py {cmd}", pty=False)
+            run(f"./manage.py {cmd}", pty=pty)
 
     @task
     def check():
