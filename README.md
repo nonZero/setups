@@ -24,6 +24,8 @@ This guide assumes the following:
 - [Using fabric for automating your remote tasks](./fab.md)
 - [Update Server and Install Services](./install-packages.md)
 - [Create a postgres sysop user](./postgres-sysop.md)
-### Setting up a django project
+### Setting up a Django Project
 - [Clone project and create a virtualenv](./clone.md)
 - [Create a production local_settings file ](./prod-settings.md)
+- [Create a database and tables](./migrate.md)
+- [Create a uwsgi Configuration File](./uwsgi.md)

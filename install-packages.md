@@ -50,8 +50,12 @@ Let's install many great packages:
         # postgres database
         'postgresql',
 
-        'nginx',  # a fast web server
-        'uwsgi',  # runs python (django) apps via WSGI
+        # nginx - a fast web server
+        'nginx',
+
+        # uwsgi: runs python (django) apps via WSGI
+        'uwsgi',
+        'uwsgi-plugin-python3',
 
         'rabbitmq-server',  # for offline tasks via celery
     ]
