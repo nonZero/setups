@@ -22,7 +22,8 @@ This guide assumes the following:
 - [Interacting with the server with SSH](./using-ssh.md)
 - [Creating a `sysop` user](./sysop.md)
 - [Using fabric for automating your remote tasks](./fab.md)
-- [Basic Server Setup: Install services and more](./install-packages.md)
+- [Update Server and Install Services](./install-packages.md)
+- [Create a postgres sysop user](./postgres-sysop.md)
 ### Setting up a django project
 - [Clone project and create a virtualenv](./clone.md)
 - [Create a production local_settings file ](./prod-settings.md)
