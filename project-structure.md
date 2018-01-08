@@ -33,7 +33,7 @@
 
 Make sure [`pipenv`](http://pipenv.readthedocs.io/en/latest/) is installed globally on your development machine.  To install `pipenv`:
 
-* On Windows: Run the following (when no virtualenv is activated!!!)
+* On Windows: Run the following (when no virtualenv is activated!!! You might need to run this as an administrator.)
 
         pip install pipenv
 

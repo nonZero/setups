@@ -1,16 +1,10 @@
+# Creating a sysop user
+
 So... if you read this we assume you can connect to your new vps with a public key using the following command:
 
     ssh root@myproject.mydomain.com
 
-You might need to approve your host one time:
-
-    The authenticity of host 'myproject.mydomain.com (111.222.33.4)' can't be established.
-    ECDSA key fingerprint is SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
-    Are you sure you want to continue connecting (yes/no)?
-
-Enter `yes`.
-
-In the next step we will create another user called `sysop`.  This user will be used for all administrative tasks instead of root.  We will give this user full premissions, just as root, but only when using the `sudo` command.  This does not provide better security, but will allow us to make less damage unnoticed :-)
+In the next step we will create another user called `sysop`.  This user will be used for all administrative tasks instead of root.  We will give this user full premissions, just as root, but only when using the `sudo` command.
 
 Create the `sysop` user:
 
@@ -37,3 +31,6 @@ Now logout from the remote system using <kbd>Ctrl</kbd>+<kbd>D</kbd> and connect
 Once connected, make sure you are able to run commands as root without entering a password:
 
     sudo echo hi
+
+
+**Note:**   Creating another user with `sudo` does not provide better security, but will allow us to make less damage by mistake (For example, installing python packages into system folders with `pip`).

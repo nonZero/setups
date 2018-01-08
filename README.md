@@ -10,7 +10,7 @@ This guide assumes the following:
 * Development machine: Linux, Windows or Mac.
 
 
-## On Your Development Machine:
+## Preparing Your Django Project:
 - [Project structure + using pipenv](./project-structure.md)
 - [Setting up postgres on develoment machines](./postgres-setup.md)
 - [Configuring Django to use postgres](./django-postgres.md)
@@ -18,10 +18,9 @@ This guide assumes the following:
  for your project](./settings.md)
 - [Preparing your project for deployment](./prepare.md)
 
-## On The Production Machine:
-### Interacting with the server
-- Getting a server
-- [Connecting to your Server and Creating a `sysop` user](./connect.md)
+## Interacting with the server
+- [Interacting with the server with SSH](./using-ssh.md)
+- [Creating a `sysop` user](./sysop.md)
 - [Using fabric for automating your remote tasks](./fab.md)
 - [Basic Server Setup: Install services and more](./install-packages.md)
 ### Setting up a django project
