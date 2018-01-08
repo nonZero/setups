@@ -87,4 +87,4 @@ Make sure [`pipenv`](http://pipenv.readthedocs.io/en/latest/) is installed globa
 
         pipenv lock -r > requirements.txt
 
-* Add these files to your git repo: `git add Pipfile Pipflie.lock requirements.txt`
+* Add these files to your git repo: `git add Pipfile Pipfile.lock requirements.txt`
