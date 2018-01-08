@@ -39,7 +39,7 @@ To check if your project is set up correctly use `check`:
     @task
     def m(cmd):
         with virtualenv():
-            run("./manage.py {cmd}".format(cmd), pty=False)
+            run(f"./manage.py {cmd}", pty=False)
 
     @task
     def check():
