@@ -14,14 +14,13 @@ This guide assumes the following:
 - [Project structure + using pipenv](./project-structure.md)
 - [Setting up postgres on develoment machines](./postgres-setup.md)
 - [Configuring Django to use postgres](./django-postgres.md)
-- [Making a modular `settings.py`
- for your project](./settings.md)
+- [Making a modular `settings.py` for your project](./settings.md)
 - [Preparing your project for deployment](./prepare.md)
 
 ## Interacting with the server
 - [Interacting with the server with SSH](./using-ssh.md)
 - [Creating a `sysop` user](./sysop.md)
-- [Using fabric for automating your remote tasks](./fab.md)
+- [Using `fabric` for Automating Remote Tasks](./fab.md)
 - [Update Server and Install Services](./install-packages.md)
 - [Create a postgres sysop user](./postgres-sysop.md)
 ### Setting up a Django Project
@@ -31,3 +30,5 @@ This guide assumes the following:
 - [Setup `uwsgi` and `nginx`](./uwsgi.md)
 - [Automating upgrades](./upgrade.md)
 
+### Tips
+- [Moving data between servers](./data.md)

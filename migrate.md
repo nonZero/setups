@@ -2,11 +2,12 @@
 
 To create the database and the database user we will use `django-extensions`' `sqlcreate` command:
 
-    @task
-    def create_db():
-        with virtualenv():
-            run("./manage.py sqlcreate | psql", pty=False)
-
+```python
+@task
+def create_db():
+    with virtualenv():
+        run("./manage.py sqlcreate | psql", pty=False)
+```
 
 run:
 
@@ -14,9 +15,11 @@ run:
 
 and migrate...
 
-    @task
-    def migrate():
-        m('migrate --noinput')
+```python
+@task
+def migrate():
+    m('migrate --noinput')
+```
 
 ...run:
 
@@ -26,9 +29,11 @@ and migrate...
 
 If you would like, you can create a superuser for your project. Add:
 
-    @task
-    def create_superuser():
-        m('createsuperuser', True)
+```python
+@task
+def create_superuser():
+    m('createsuperuser', True)
+```
 
 and run:
 

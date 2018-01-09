@@ -12,13 +12,17 @@
     - Rename your current `myproject/settings.py` to `myproject/base_settings.py` .
     - Create a new `myproject/settings.py` file with the following content:
 
-            from .base_settings import *
-            from .local_settings import *
+        ```python
+        from .base_settings import *
+        from .local_settings import *
+        ```
 
     - Create a new `local_settings.py` file with the follwoing content:
 
-            DEBUG = True
-            EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+        ```python
+        DEBUG = True
+        EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+        ```
 
         Remember: **Don't add `local_settings.py` to git!**
 

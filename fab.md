@@ -1,3 +1,5 @@
+# Using `fabric` for Automating Remote Tasks
+
 To automate deployment tasks, we will use `fabric` which allows running commands on remote hosts from python.
 
 On your **development machine** run:
@@ -13,16 +15,18 @@ Fabric uses a `fabfile` to store reusable tasks.
 Create a new `MyProject/fabfile.py` with:
 
 
-    from fabric.api import *
+```python
+from fabric.api import *
 
-    @task
-    def foo():
-        print("FOO!!!!")
+@task
+def foo():
+    print("FOO!!!!")
 
 
-    @task
-    def bar():
-        print("BAR!!")
+@task
+def bar():
+    print("BAR!!")
+```
 
 Now try running the tasks with:
 
@@ -36,29 +40,34 @@ Use `run()` to execute commands on a remote host:
 
 Change your `fabfile.py` to include:
 
-    from fabric.api import *
+```python
+from fabric.api import *
 
-    env.user = "sysop"
-    env.hosts = ["myproject.mydomain.com"]
-
-
-    @task
-    def host_type():
-        run("uname -a")
+env.user = "sysop"
+env.hosts = ["myproject.mydomain.com"]
 
 
-    @task
-    def uptime():
-        run("uptime")
+@task
+def host_type():
+    run("uname -a")
+
+
+@task
+def uptime():
+    run("uptime")
+```
 
 and run::
 
     fab host_type uptime
 
-To execute a command as root with `sudo` use one of:
+## Tips
+To execute a command as root from a `fabfile` with `sudo` use one of:
 
-    sudo("cmd")
-    run("sudo cmd")
-    run("cmd", use_sudo=True)
+```python
+sudo("cmd")
+run("sudo cmd")
+run("cmd", use_sudo=True)
+```
 
 Refer to fabric's [docs](http://www.fabfile.org/) for more info.

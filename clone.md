@@ -2,16 +2,17 @@
 
 Add this to `fabfile.py` to clone the project to your server:
 
-    # ...
+```python
+# ...
 
-    env.project = "MyProject"
-    env.code_dir = f"/home/sysop/{env.project}"
-    env.clone_url = "https:///github.com/myuser/MyProject.git"
+env.project = "MyProject"
+env.code_dir = f"/home/sysop/{env.project}"
+env.clone_url = "https:///github.com/myuser/MyProject.git"
 
-    @task
-    def clone_project():
-        run(f"git clone {env.clone_url} {env.code_dir}", pty=False)
-
+@task
+def clone_project():
+    run(f"git clone {env.clone_url} {env.code_dir}", pty=False)
+```
 
 run:
 
@@ -21,17 +22,19 @@ run:
 
 Add this to `fabfile.py` to create a virtualenv:
 
-    # ...
+```python
+# ...
 
-    env.venv_name = "myproject"
-    env.venvs = f"/home/sysop/.virtualenvs/"
-    env.venv_path = f"{env.venvs}{env.venv_name}/"
-    env.venv_command = f"source {env.venv_path}/bin/activate"
+env.venv_name = "myproject"
+env.venvs = f"/home/sysop/.virtualenvs/"
+env.venv_path = f"{env.venvs}{env.venv_name}/"
+env.venv_command = f"source {env.venv_path}/bin/activate"
 
-    @task
-    def create_venv():
-        run(f"mkdir -p {env.venvs}")
-        run(f"virtualenv -p /usr/bin/python3 --prompt='({env.venv_name}) ' {env.venv_path}")
+@task
+def create_venv():
+    run(f"mkdir -p {env.venvs}")
+    run(f"virtualenv -p /usr/bin/python3 --prompt='({env.venv_name}) ' {env.venv_path}")
+```
 
 and run:
 
@@ -41,20 +44,25 @@ and run:
 
 We will create a context manager to run commands in our virtualenv:
 
-    from contextlib import contextmanager
+```python
+from contextlib import contextmanager
 
-    @contextmanager
-    def virtualenv():
-        with cd(env.code_dir):
-            with prefix(env.venv_command):
-                yield
+@contextmanager
+def virtualenv():
+    with cd(env.code_dir):
+        with prefix(env.venv_command):
+            yield
+```
 
 Example usage:
+
+```python
 
     @task
     def upgrade_pip():
         with virtualenv():
             run("pip install --upgrade pip", pty=False)
+```
 
 To run:
 
@@ -65,10 +73,12 @@ To run:
 
 Assuming your project has an updated `requirements.txt` (created with `pipenv lock -r > requirements.txt`):
 
-    @task
-    def pip_install():
-        with virtualenv():
-            run("pip install -r requirements.txt", pty=False)
+```python
+@task
+def pip_install():
+    with virtualenv():
+        run("pip install -r requirements.txt", pty=False)
+```
 
 run:
 

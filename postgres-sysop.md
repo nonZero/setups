@@ -6,10 +6,12 @@ On Ubuntu, postgres creates a `postgres` linux user which is a postgres-superuse
 
 To make things easier - let's make our `sysop` user a postgres superuser as well!
 
-    @task
-    def create_postgres_su():
-        run("sudo -u postgres createuser -s sysop")
-        run("createdb sysop")
+```python
+@task
+def create_postgres_su():
+    run("sudo -u postgres createuser -s sysop")
+    run("createdb sysop")
+```
 
 and run:
 

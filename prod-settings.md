@@ -6,18 +6,20 @@ Let's try this time to do it manually, with an editor.
 
 The settings file should look something like this:
 
-    ALLOWED_HOSTS = ["myproject.mydomain.com"]
+```python
+ALLOWED_HOSTS = ["myproject.mydomain.com"]
 
-    SECRET_KEY = ''
+SECRET_KEY = ''
 
-    # Send error reports to:
-    ADMINS = (
-        ('Your Name', 'your.name@gmail.com'),
-        ('John Doe', 'john.doe@gmail.com'),
-    )
+# Send error reports to:
+ADMINS = (
+    ('Your Name', 'your.name@gmail.com'),
+    ('John Doe', 'john.doe@gmail.com'),
+)
 
-    # send some other reports to...
-    MANAGERS = ADMINS
+# send some other reports to...
+MANAGERS = ADMINS
+```
 
 Edit this file locally in an open editor.  Add a secret key to the text above.  If your project has `django-extensions`, to generate a secret key, run locally :
 
@@ -36,18 +38,20 @@ Use <kbd>Ctrl</kbd>+<kbd>D</kbd> to logout from ssh.
 
 To check if your project is set up correctly use `check`:
 
-    @task
-    def m(cmd, pty=False):
-        with virtualenv():
-            run(f"./manage.py {cmd}", pty=pty)
+```python
+@task
+def m(cmd, pty=False):
+    with virtualenv():
+        run(f"./manage.py {cmd}", pty=pty)
 
-    @task
-    def check():
-        m('check')
+@task
+def check():
+    m('check')
 
-    @task
-    def send_test_mail():
-        m('sendtestemail --admin')
+@task
+def send_test_mail():
+    m('sendtestemail --admin')
+```
 
 run:
 
