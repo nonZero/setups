@@ -47,7 +47,12 @@ Add this
 
     NGINX_CONF = """
     server {{
-        listen      80;
+        listen 80 default_server;
+        return 410;
+    }}
+
+    server {{
+        listen 80;
         server_name {host};
         charset     utf-8;
 
@@ -88,7 +93,11 @@ and run:
 
 
 ## Troubleshooting
-Add a task to show latest nginx log entries:
+Add a task to show latest uwsgi and nginx log entries:
+
+    @task
+    def uwsgi_log():
+        sudo(f"tail /var/log/uwsgi/app/{env.app_name}.log")
 
     @task
     def nginx_log():
