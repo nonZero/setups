@@ -10,6 +10,12 @@
 
         sudo apt-get install postgis postgresql-9.6-postgis-2.3
 
+## Ubuntu Linux 18.04
+* Run:
+
+        sudo apt-get install postgis postgresql-10-postgis-2.4
+
+
 ## Windows
 ### PostGIS
 * Install Postgis 2.4.2 **64 bit** from [here](https://winnie.postgis.net/download/windows/pg10/buildbot/postgis-bundle-pg10x64-setup-2.4.2-1.exe)
