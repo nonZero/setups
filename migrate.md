@@ -23,7 +23,7 @@ def migrate():
 
 ...run:
 
-    fab m:migrate
+    fab migrate
 
 ## Create a Django Superuser (Optional)
 
