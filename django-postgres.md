@@ -2,9 +2,9 @@
 ## Prerequisites
 - [Install postgres](./postgres-setup.md).
 - Make sure your user is a postgres superuser, and you can access postgres from the command line by running `psql`.
-- Install `psycopg2`, the package used by Django to use postgres.  In your virtualenv run:
+- Install `psycopg2-binary`, the package used by Django to use postgres.  In your virtualenv run:
 
-        pipenv install psycopg2
+        pipenv install psycopg2-binary
 
 ## Choosing Simple Configuration Options
 Assuming our project name is `myproject`, we will choose the following defaults:
