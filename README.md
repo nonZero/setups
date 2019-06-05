@@ -32,3 +32,4 @@ This guide assumes the following:
 
 ### Tips
 - [Moving data between servers](./data.md)
+- [Set up unattended-upgrades](./unattended-upgrades.md)
